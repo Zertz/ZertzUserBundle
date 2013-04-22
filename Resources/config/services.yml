@@ -1,0 +1,7 @@
+parameters:
+#    x_pen_user.example.class: Zertz\UserBundle\Example
+
+services:
+#    x_pen_user.example:
+#        class: %x_pen_user.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

@@ -1,0 +1,10 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}Connect{% endblock %}
+
+{% block content %}
+    <h1>Connect</h1>
+    <p>
+        {{ facebook_login_button({'autologoutlink': false}) }}
+    </p>
+{% endblock %}

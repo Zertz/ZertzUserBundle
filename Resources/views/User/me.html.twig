@@ -1,0 +1,42 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}Me{% endblock %}
+
+{% block content %}
+<div class="case">
+    <h2>
+        {{ app.user }}
+        <span class="right">{{ app.user.email }}</span>
+    </h2>
+    <hr />
+</div>
+
+<div class="case">
+    <h2>
+        {% if dogowners|length > 0 %}Dog{% if dogowners|length > 1 %}s{% endif %}{% else %}You are not currently the owner of a dog{% endif %}
+        <span class="right"><a href="{{ path('dog_add') }}">Add a dog</a></span>
+    </h2>
+    <hr />
+    <ul>
+    {% for i in dogowners %}
+        <li>
+            <a href="{{ path('dog_view', {'slug': i.dog.slug}) }}">{{ i.dog }}</a>
+            <span class="right"><a href="#"></a></span>
+        </li>
+    {% endfor %}
+    </ul>
+</div>
+
+<div class="case">
+    <h2>
+        {% if teamhandlers|length > 0 %}Team{% if teamhandlers|length > 1 %}s{% endif %}{% else %}You are not currently part of a handling team{% endif %}
+        <span class="right"><a href="{{ path('team_create') }}">Create a handling team</a></span>
+    </h2>
+    <hr />
+    <ul>
+    {% for i in teamhandlers %}
+        <li><a href="{{ path('team_view', {'slug': i.team.slug}) }}">{{ i.team }}</a></li>
+    {% endfor %}
+    </ul>
+</div>
+{% endblock %}

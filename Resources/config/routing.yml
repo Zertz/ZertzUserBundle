@@ -1,0 +1,5 @@
+# User
+user:
+  resource: "@ZertzUserBundle/Controller"
+  prefix: /
+  type: annotation

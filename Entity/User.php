@@ -8,7 +8,7 @@ use FOS\UserBundle\Entity\User as BaseUser;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="User")
+ * @ORM\Table(name="zertz_user")
  */
 class User extends BaseUser
 {
